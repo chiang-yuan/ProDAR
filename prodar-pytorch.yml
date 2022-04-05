@@ -90,4 +90,3 @@ dependencies:
     - tqdm==4.63.0
     - urllib3==1.26.8
     - yacs==0.1.8
-prefix: /home/yuan/miniconda3/envs/pytorch
