@@ -191,7 +191,12 @@ if __name__ == "__main__":
             for epoch in range(1, config.epochs+1):
 
                 if config.scheduler is not None:
-                    l.write(f'{epoch:5d}\t {scheduler.get_last_lr()[0]:10.5e}\n')
+                    model.set_optimizer(**vars(config))
+                    model.set_scheduler(**vars(config))
+                    l.write(f'{epoch:5d}\t {model.scheduler.get_last_lr()[0]:10.5e}\n')
+                    l.flush()
+                else:
+                    l.write(f'{epoch:5d}\t {config.lr:10.5e}\n')
                     l.flush()
 
                 train_loss, train_ppv, train_tpr, train_tnr = model.train(

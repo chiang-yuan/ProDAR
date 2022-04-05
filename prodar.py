@@ -179,14 +179,8 @@ class ProDAR:
     def load(self, f):
         self.model = torch.load(f)
 
-    def train(self, train_loader, epoch, thres=0.5,
-        optimizer='Adam', lr=1e-5, scheduler=None, 
-        **kwargs):
+    def set_optimizer(self, optimizer, lr, **kwargs):
 
-        self.model.train()
-
-        self.criterion = nn.BCEWithLogitsLoss(pos_weight=self.pos_weight.to(self.device))
-        
         kwargs_optimizer = {}
         for name in inspect.getfullargspec(optimizers[optimizer].__init__).args:
             if name in kwargs and kwargs[name] is not None:
@@ -198,17 +192,60 @@ class ProDAR:
             **kwargs_optimizer
         )
 
-        if scheduler is not None:
-            kwargs_scheduler = {}
-            for name in inspect.getfullargspec(schedulers[scheduler].__init__).args:
-                if name in kwargs and kwargs[name] is not None:
-                    kwargs_scheduler[name] = kwargs[name]
+        return self.optimizer
 
-            self.scheduler = schedulers[scheduler](
-                self.optimizer,
-                verbose=True,
-                **kwargs_scheduler
-            )
+    def set_scheduler(self, scheduler, **kwargs):
+        
+        if scheduler is None:
+            return None
+        
+        kwargs_scheduler = {}
+        for name in inspect.getfullargspec(schedulers[scheduler].__init__).args:
+            if name in kwargs and kwargs[name] is not None:
+                kwargs_scheduler[name] = kwargs[name]
+
+        self.scheduler = schedulers[scheduler](
+            self.optimizer,
+            verbose=True,
+            **kwargs_scheduler
+        )
+
+        return self.scheduler 
+
+    def train(self, train_loader, epoch, thres=0.5,
+        optimizer='Adam', lr=1e-5, scheduler=None, 
+        **kwargs):
+
+        self.model.train()
+
+        self.criterion = nn.BCEWithLogitsLoss(pos_weight=self.pos_weight.to(self.device))
+
+        self.set_optimizer(optimizer, lr, **kwargs)
+
+        self.set_scheduler(scheduler, **kwargs)
+        
+        # kwargs_optimizer = {}
+        # for name in inspect.getfullargspec(optimizers[optimizer].__init__).args:
+        #     if name in kwargs and kwargs[name] is not None:
+        #         kwargs_optimizer[name] = kwargs[name]
+
+        # self.optimizer = optimizers[optimizer](
+        #     self.model.parameters(),
+        #     lr = lr,
+        #     **kwargs_optimizer
+        # )
+
+        # if scheduler is not None:
+        #     kwargs_scheduler = {}
+        #     for name in inspect.getfullargspec(schedulers[scheduler].__init__).args:
+        #         if name in kwargs and kwargs[name] is not None:
+        #             kwargs_scheduler[name] = kwargs[name]
+
+        #     self.scheduler = schedulers[scheduler](
+        #         self.optimizer,
+        #         verbose=True,
+        #         **kwargs_scheduler
+        #     )
 
         total_tp, total_fp, total_tn, total_fn = 0, 0, 0, 0
         total_loss = 0
