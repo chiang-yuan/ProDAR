@@ -201,9 +201,8 @@ class ProDAR:
         
         kwargs_scheduler = {}
         for name in inspect.getfullargspec(schedulers[scheduler].__init__).args:
-            if name in kwargs and \
-             kwargs[name] is not None and \ 
-             name != "optimizer":
+            if name in kwargs and kwargs[name] is not None \ 
+                and name != "optimizer":
                 kwargs_scheduler[name] = kwargs[name]
 
         self.scheduler = schedulers[scheduler](
