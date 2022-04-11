@@ -17,7 +17,7 @@ if __name__ == "__main__":
 	
 	print("Initialization...")
 
-	cases = sorted(glob.glob('./history/*/GCNadd_K5_N256_G1024_P0/*-model.pt'))
+	cases = sorted(glob.glob('./history/*/*/*-model.pt'))
 
 	print('\tfound {} models to evaluate'.format(len(cases)))
 
