@@ -55,7 +55,7 @@ ProDAR enhances protien function prediction and extracts Dynamically Activated R
 
 ## Data
 
-To preprocess data and generate protein graphs, execuate the first script to download raw data from [RCSB PDB](https://www.rcsb.org/) [search API](https://search.rcsb.org/) and [PDBe](https://www.ebi.ac.uk/pdbe/) [SIFTS API](https://www.ebi.ac.uk/pdbe/api/doc/sifts.html), and execuate the second script to export filtered PDB and GO entries as JSON graphs.
+To preprocess data and generate protein graphs, execuate the first script to download raw data from [RCSB PDB](https://www.rcsb.org/) [search API](https://search.rcsb.org/) and [PDBe](https://www.ebi.ac.uk/pdbe/) [SIFTS API](https://www.ebi.ac.uk/pdbe/api/doc/sifts.html), and execute the second script to export filtered PDB and GO entries as JSON graphs.
 
 1. Execute `data-sifts.py` 
   ```
@@ -65,7 +65,7 @@ To preprocess data and generate protein graphs, execuate the first script to dow
   ```
   python data-graphs.py
   ```
-> For above two steps, `*.ipynb` files are provided for markdown and optional visualization when jupyter lab/notebook is used.
+> For the above two steps, `*.ipynb` files are provided for markdown and optional visualization when jupyter lab/notebook is used.
 
 ## Run
 
@@ -73,7 +73,7 @@ To preprocess data and generate protein graphs, execuate the first script to dow
 ```
 python experiment_kfold.py <options>
 ```
-### Evaluation (currently execuate all saved models in `history/`
+### Evaluation (currently execute all saved models in `history/`)
 ```
 python evaluation_kfold.py
 ```
