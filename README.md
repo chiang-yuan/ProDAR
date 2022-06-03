@@ -45,6 +45,7 @@ pip install torch-sparse -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
 pip install torch-geometric
 ```
 where `${TORCH}` and `${CUDA}` should be repalced by the PyTorch and CUDA version (`TORCH=1.10.0` and `CUDA=cu113` for this specific environment)
+3. Extra packages (if not installed by previous steps) may be installed via pip wheel
 
 ## Data
 
@@ -66,7 +67,7 @@ To preprocess data and generate protein graphs, execuate the first script to dow
 ```
 python experiment_kfold.py <options>
 ```
-### Evaluation
+### Evaluation (currently execuate all saved models in `history/`
 ```
 python evaluation_kfold.py
 ```
