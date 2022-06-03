@@ -55,7 +55,7 @@ ProDAR enhances protien function prediction and extracts Dynamically Activated R
 
 ## Data
 
-To preprocess data and generate protein graphs, execuate the first script to download raw data from [RCSB PDB](https://www.rcsb.org/) [search API](https://search.rcsb.org/) and [PDBe](https://www.ebi.ac.uk/pdbe/) [SIFTS API](https://www.ebi.ac.uk/pdbe/api/doc/sifts.html), and execute the second script to export filtered PDB and GO entries as JSON graphs.
+To preprocess data and generate protein graphs, execute the first script to download raw data from [RCSB PDB](https://www.rcsb.org/) [search API](https://search.rcsb.org/) and [PDBe](https://www.ebi.ac.uk/pdbe/) [SIFTS API](https://www.ebi.ac.uk/pdbe/api/doc/sifts.html), and execute the second script to export filtered PDB and GO entries as JSON graphs.
 
 1. Execute `data-sifts.py` 
   ```
