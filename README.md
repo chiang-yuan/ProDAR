@@ -39,17 +39,19 @@ ProDAR enhances protien function prediction and extracts Dynamically Activated R
 ## Environment
 
 1. Clone environment from `prodar-env.yml` using [miniconda](https://docs.conda.io/en/latest/index.html):
-```bash
-conda env create -f environment.yml
-```
+  ```bash
+  conda env create -f environment.yml
+  ```
+
 2. Install [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) package via pip wheel:
-```bash
-pip install torch-scatter -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
-pip install torch-sparse -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
-pip install torch-geometric
-```
-where `${TORCH}` and `${CUDA}` should be repalced by the PyTorch and CUDA version (`TORCH=1.10.0` and `CUDA=cu113` for this specific environment)
-3. Extra packages (if not installed by previous steps) may be installed via pip wheel
+  ```bash
+  pip install torch-scatter -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
+  pip install torch-sparse -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
+  pip install torch-geometric
+  ```
+  where `${TORCH}` and `${CUDA}` should be repalced by the PyTorch and CUDA version (`TORCH=1.10.0` and `CUDA=cu113` for this specific environment).
+
+3. Extra packages (if not installed by previous steps) may be installed via pip wheel.
 
 ## Data
 
