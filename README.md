@@ -79,7 +79,7 @@ python evaluation_kfold.py
 ```
 
 ## Citing
-If you happen to use the scripts, analyses, models, results or partial snippnet of this work, please cite the associated paper
+If you happen to use the scripts, analyses, models, results or partial snippet of this work, please cite the associated paper
 ```Bibtex
 @article{chiang2021encoding,
   title={Encoding protein dynamic information in graph representation for functional residue identification},
