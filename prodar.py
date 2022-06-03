@@ -177,7 +177,7 @@ class ProDAR:
         torch.save(self.model, f)
 
     def load(self, f):
-        self.model = torch.load(f)
+        self.model = torch.load(f).to(self.device)
 
     def set_optimizer(self, optimizer, lr, **kwargs):
 
