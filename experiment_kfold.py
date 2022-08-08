@@ -14,6 +14,10 @@ from prodar import ProDAR
 
 from sklearn.model_selection import KFold
 
+def seed_worker(worker_id):
+        worker_seed = torch.initial_seed() % 2**32
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -92,11 +96,6 @@ if __name__ == "__main__":
     # # torch.backends.cudnn.deterministic = True
     # torch.set_deterministic(True)
     # torch.use_deterministic_algorithms(True)
-
-    def seed_worker(worker_id):
-        worker_seed = torch.initial_seed() % 2**32
-        np.random.seed(worker_seed)
-        random.seed(worker_seed)
 
     g = torch.Generator()
     g.manual_seed(0)

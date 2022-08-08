@@ -258,6 +258,8 @@ class ProDAR:
 
             data_device = data.to(self.device)
 
+            optimizer.zero_grad()
+
             out = self.model(data_device)
 
             loss = self.criterion(out, data_device.y)
