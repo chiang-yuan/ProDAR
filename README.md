@@ -1,8 +1,8 @@
 # ProDAR
 
-ProDAR enhances protien function prediction and extracts Dynamically Activated Residues (DARs) using the dynamical information obtained from normal mode analysis (NMA). The code is published with [Encoding protein dynamic information in graph representation for functional residue identification](https://arxiv.org/abs/2112.12033). 
+ProDAR enhances protien function prediction and extracts Dynamically Activated Residues (DARs) using the dynamical information obtained from normal mode analysis (NMA). The code is published with [Encoding protein dynamic information in graph representation for functional residue identification](https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(22)00261-2). 
 
-[[arXiv]](https://arxiv.org/abs/2112.12033)
+[[arXiv]](https://arxiv.org/abs/2112.12033) [[CRPS]](https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(22)00261-2)
 
 ## Hierarchy
 ```
@@ -79,13 +79,17 @@ python evaluation_kfold.py
 ```
 
 ## Citing
-If you happen to use the scripts, analyses, models, results or partial snippet of this work, please cite the associated paper
+If you happen to use the scripts, analyses, models, results or partial snippet of this work and find it useful, please cite the associated paper
 ```Bibtex
-@article{chiang2021encoding,
+@article{chiang2022encoding,
   title={Encoding protein dynamic information in graph representation for functional residue identification},
   author={Chiang, Yuan and Hui, Wei-Han and Chang, Shu-Wei},
-  journal={arXiv preprint arXiv:2112.12033},
-  year={2021}
+  journal={Cell Reports Physical Science},
+  volume={3},
+  number={7},
+  pages={100975},
+  year={2022},
+  publisher={Elsevier}
 }
 ```
 
